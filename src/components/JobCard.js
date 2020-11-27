@@ -10,6 +10,7 @@ const JobCard = ({ job }) => {
   return (
     <div className={`card job-card ${job.featured ? 'border-left' : ''}`}>
       <img src={`${process.env.PUBLIC_URL}/${job.logo}`} alt='job-logo' />
+
       <div className='job-info'>
         <div className='job-info-top'>
           <p className='company'>{job.company}</p>
@@ -24,6 +25,7 @@ const JobCard = ({ job }) => {
             <strong> {job.position}</strong>
           </p>
         </div>
+
         <div className='job-info-bottom'>
           <p>{job.postedAt}</p>
           <span className='middle-dot'>&#183;</span>
