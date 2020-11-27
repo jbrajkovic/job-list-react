@@ -1,0 +1,23 @@
+.tag-box {
+  display: flex;
+  border-radius: 7px;
+  overflow: hidden;
+  animation: fade-in 0.5s;
+
+  .tag {
+    padding: 10px 10px 7px;
+    background-color: $tag-color;
+    color: $primary;
+
+    &.removable {
+      display: flex;
+      background-color: $primary;
+
+      &:hover {
+        background-color: $distinct-grey;
+        color: #fff;
+        cursor: pointer;
+      }
+    }
+  }
+}

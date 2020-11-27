@@ -1,25 +1,30 @@
-import logo from './logo.svg';
-import './App.css';
+import { useContext } from 'react'
+import { AppContext } from './contexts/AppContext'
+
+import FilterBox from './components/FilterBox'
+import JobCard from './components/JobCard'
+import Header from './components/Header'
+import Loader from './components/Loader'
 
 function App() {
+  const { filteredJobs, loading, activeTags } = useContext(AppContext)
+
+  const jobCards = filteredJobs.map((job) => <JobCard key={job.id} job={job} />)
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div className='App'>
+      <Header />
+      {loading ? (
+        <Loader />
+      ) : (
+        <div className='container'>
+          {activeTags.length ? <FilterBox /> : ''}
+
+          {jobCards}
+        </div>
+      )}
     </div>
-  );
+  )
 }
 
-export default App;
+export default App
