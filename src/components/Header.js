@@ -7,8 +7,7 @@ const Header = () => {
         <source media='(min-width:768px)' srcset={process.env.PUBLIC_URL + '/images/bg-header-desktop.svg'} />
         <img
           src={process.env.PUBLIC_URL + '/images/bg-header-mobile.svg'}
-          alt='Header-image'
-          style='width:auto;'
+          alt='Header'
         />
       </picture>
     </header>
