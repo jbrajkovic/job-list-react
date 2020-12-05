@@ -3,17 +3,14 @@ import React from 'react'
 const Header = () => {
   return (
     <header>
-      <img
-        className='header-mobile'
-        src={process.env.PUBLIC_URL + '/images/bg-header-mobile.svg'}
-        alt='header-mobile'
-      />
-
-      <img
-        className='header-desktop'
-        src={process.env.PUBLIC_URL + '/images/bg-header-desktop.svg'}
-        alt='header-desktop'
-      />
+      <picture>
+        <source media='(min-width:768px)' srcset={process.env.PUBLIC_URL + '/images/bg-header-desktop.svg'} />
+        <img
+          src={process.env.PUBLIC_URL + '/images/bg-header-mobile.svg'}
+          alt='Header-image'
+          style='width:auto;'
+        />
+      </picture>
     </header>
   )
 }
