@@ -1,10 +1,15 @@
 import { useContext } from 'react'
 import { AppContext } from './contexts/AppContext'
+import loadable from '@loadable/component'
 
-import FilterBox from './components/FilterBox'
+/* import FilterBox from './components/FilterBox'
 import JobCard from './components/JobCard'
+import Loader from './components/Loader' */
 import Header from './components/Header'
-import Loader from './components/Loader'
+
+const FilterBox = loadable(() => import('./components/FilterBox'))
+const JobCard = loadable(() => import('./components/JobCard'))
+const Loader = loadable(() => import('./components/Loader'))
 
 function App() {
   const { filteredJobs, loading, activeTags } = useContext(AppContext)
