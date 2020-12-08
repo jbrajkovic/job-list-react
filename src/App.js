@@ -2,10 +2,10 @@ import { useContext } from 'react'
 import { AppContext } from './contexts/AppContext'
 import loadable from '@loadable/component'
 
-import FilterBox from './components/FilterBox'
 import Loader from './components/Loader'
 import Header from './components/Header'
 
+const FilterBox = loadable(() => import('./components/FilterBox'))
 const JobCard = loadable(() => import('./components/JobCard'))
 
 function App() {
